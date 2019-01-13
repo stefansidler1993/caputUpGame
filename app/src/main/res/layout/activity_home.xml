@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    tools:context=".HomeActivity">
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="1"
+        android:scrollbars="none">
+
+        <TableLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:isScrollContainer="true"
+            android:orientation="vertical"
+            android:stretchColumns="*">
+
+            <TableRow>
+
+                <com.mikhaellopez.circularimageview.CircularImageView
+                    android:id="@+id/tb_politics_category"
+                    android:layout_width="200dp"
+                    android:layout_height="200dp"
+                    android:gravity="center"
+                    android:src="@drawable/politica"
+                    app:civ_border_color="#EEEEEE"
+                    app:civ_border_width="4dp"
+                    app:civ_shadow="true"
+                    app:civ_shadow_color="#8BC34A"
+                    app:civ_shadow_radius="10" />
+
+                <com.mikhaellopez.circularimageview.CircularImageView
+                    android:id="@+id/tb_animals_category"
+                    android:layout_width="200dp"
+                    android:layout_height="200dp"
+                    android:gravity="center"
+                    android:src="@drawable/animales"
+                    app:civ_border_color="#EEEEEE"
+                    app:civ_border_width="4dp"
+                    app:civ_shadow="true"
+                    app:civ_shadow_color="#8BC34A"
+                    app:civ_shadow_radius="10" />
+
+
+            </TableRow>
+
+            <TableRow>
+
+                <com.mikhaellopez.circularimageview.CircularImageView
+                    android:id="@+id/tb_superstars_category"
+                    android:layout_width="200dp"
+                    android:layout_height="200dp"
+                    android:gravity="center"
+                    android:src="@drawable/superstars"
+                    app:civ_border_color="#EEEEEE"
+                    app:civ_border_width="4dp"
+                    app:civ_shadow="true"
+                    app:civ_shadow_color="#8BC34A"
+                    app:civ_shadow_radius="10" />
+
+                <com.mikhaellopez.circularimageview.CircularImageView
+                    android:id="@+id/tb_riddles_category"
+                    android:layout_width="200dp"
+                    android:layout_height="200dp"
+                    android:gravity="center"
+                    android:src="@drawable/adivinanza"
+                    app:civ_border_color="#EEEEEE"
+                    app:civ_border_width="4dp"
+                    app:civ_shadow="true"
+                    app:civ_shadow_color="#8BC34A"
+                    app:civ_shadow_radius="10" />
+
+            </TableRow>
+
+            <TableRow>
+
+                <com.mikhaellopez.circularimageview.CircularImageView
+                    android:id="@+id/tb_songs_category"
+                    android:layout_width="200dp"
+                    android:layout_height="200dp"
+                    android:gravity="center"
+                    android:src="@drawable/musica"
+                    app:civ_border_color="#EEEEEE"
+                    app:civ_border_width="4dp"
+                    app:civ_shadow="true"
+                    app:civ_shadow_color="#8BC34A"
+                    app:civ_shadow_radius="10" />
+
+                <com.mikhaellopez.circularimageview.CircularImageView
+                    android:id="@+id/tb_movies_category"
+                    android:layout_width="200dp"
+                    android:layout_height="200dp"
+                    android:gravity="center"
+                    android:src="@drawable/peliculas"
+                    app:civ_border_color="#EEEEEE"
+                    app:civ_border_width="4dp"
+                    app:civ_shadow="true"
+                    app:civ_shadow_color="#8BC34A"
+                    app:civ_shadow_radius="10" />
+
+            </TableRow>
+
+            <TableRow>
+
+                <com.mikhaellopez.circularimageview.CircularImageView
+                    android:id="@+id/tb_singers_category"
+                    android:layout_width="200dp"
+                    android:layout_height="200dp"
+                    android:gravity="center"
+                    android:src="@drawable/singer"
+                    app:civ_border_color="#EEEEEE"
+                    app:civ_border_width="4dp"
+                    app:civ_shadow="true"
+                    app:civ_shadow_color="#8BC34A"
+                    app:civ_shadow_radius="10" />
+
+                <com.mikhaellopez.circularimageview.CircularImageView
+                    android:id="@+id/tb_sports_category"
+                    android:layout_width="200dp"
+                    android:layout_height="200dp"
+                    android:gravity="center"
+                    android:src="@drawable/deporte"
+                    app:civ_border_color="#EEEEEE"
+                    app:civ_border_width="4dp"
+                    app:civ_shadow="true"
+                    app:civ_shadow_color="#8BC34A"
+                    app:civ_shadow_radius="10" />
+
+            </TableRow>
+
+            <TableRow>
+
+                <com.mikhaellopez.circularimageview.CircularImageView
+                    android:id="@+id/tb_countries_category"
+                    android:layout_width="200dp"
+                    android:layout_height="200dp"
+                    android:gravity="center"
+                    android:src="@drawable/countries"
+                    app:civ_border_color="#EEEEEE"
+                    app:civ_border_width="4dp"
+                    app:civ_shadow="true"
+                    app:civ_shadow_color="#8BC34A"
+                    app:civ_shadow_radius="10" />
+
+                <com.mikhaellopez.circularimageview.CircularImageView
+                    android:id="@+id/tb_food_category"
+                    android:layout_width="200dp"
+                    android:layout_height="200dp"
+                    android:gravity="center"
+                    android:src="@drawable/food"
+                    app:civ_border_color="#EEEEEE"
+                    app:civ_border_width="4dp"
+                    app:civ_shadow="true"
+                    app:civ_shadow_color="#8BC34A"
+                    app:civ_shadow_radius="10" />
+
+            </TableRow>
+
+        </TableLayout>
+
+    </ScrollView>
+</android.support.design.widget.CoordinatorLayout>

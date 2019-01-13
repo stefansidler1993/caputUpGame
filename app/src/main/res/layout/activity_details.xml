@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:circular="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:background="@drawable/background2"
+    tools:context=".DetailsActivity">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="16dp"
+        android:orientation="horizontal"
+        circular:layout_constraintBottom_toBottomOf="parent"
+        tools:layout_editor_absoluteX="0dp">
+
+        <com.electronic.lapsus.caputup.CircularProgressBar
+            android:id="@+id/circularprogressbar"
+            style="@style/Widget.ProgressBar.CircularProgressBar"
+            android:layout_width="186dp"
+            android:layout_height="178dp"
+            android:layout_above="@+id/init_msg"
+            android:clickable="true"
+            android:hapticFeedbackEnabled="true"
+            android:visibility="visible"
+            circular:cpb_subtitle="Minutos"
+            circular:cpb_title="0"
+            circular:cpb_titleColor="black"
+            circular:layout_constraintBottom_toBottomOf="parent"
+            circular:layout_constraintEnd_toEndOf="parent"
+            circular:layout_constraintHorizontal_bias="0.116"
+            circular:layout_constraintStart_toStartOf="parent"
+            circular:layout_constraintTop_toTopOf="parent"
+            circular:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/init_msg"
+            android:layout_width="571dp"
+            android:layout_height="52dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:text='"Favor poner el celular en la frente"'
+            android:textAlignment="center"
+            android:textColor="@color/colorAccent"
+            android:textSize="36sp"
+            android:textStyle="bold"
+            circular:layout_constraintStart_toStartOf="parent"
+            circular:layout_constraintTop_toBottomOf="@+id/circularprogressbar" />
+
+    </android.support.constraint.ConstraintLayout>
+
+</android.support.constraint.ConstraintLayout>
