@@ -7,4 +7,8 @@
     <color name="circular_progress_default_background">#787878</color>
     <color name="circular_progress_default_title">#bada55</color>
     <color name="circular_progress_default_subtitle">#ea1717</color>
+    <color name="white">#ffffff</color>
+    <color name="orange">#ea753b</color>
+    <color name="green">#69c150</color>
+    <color name="red">#e93f3f</color>
 </resources>

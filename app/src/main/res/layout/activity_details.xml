@@ -1,54 +1,92 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:circular="http://schemas.android.com/apk/res-auto"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:circular="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="horizontal"
     android:background="@drawable/background2"
+    android:orientation="horizontal"
     tools:context=".DetailsActivity">
 
     <android.support.constraint.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginBottom="16dp"
+        android:layout_width="592dp"
+        android:layout_height="311dp"
         android:orientation="horizontal"
-        circular:layout_constraintBottom_toBottomOf="parent"
-        tools:layout_editor_absoluteX="0dp">
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        circular:layout_constraintBottom_toBottomOf="parent">
 
         <com.electronic.lapsus.caputup.CircularProgressBar
             android:id="@+id/circularprogressbar"
             style="@style/Widget.ProgressBar.CircularProgressBar"
-            android:layout_width="186dp"
-            android:layout_height="178dp"
+            android:layout_width="171dp"
+            android:layout_height="200dp"
             android:layout_above="@+id/init_msg"
+            android:layout_marginStart="16dp"
+            android:layout_marginBottom="16dp"
             android:clickable="true"
             android:hapticFeedbackEnabled="true"
             android:visibility="visible"
-            circular:cpb_subtitle="Minutos"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_bias="0.076"
+            app:layout_constraintVertical_bias="0.0"
+            circular:cpb_subtitle="Segundos"
             circular:cpb_title="0"
             circular:cpb_titleColor="black"
-            circular:layout_constraintBottom_toBottomOf="parent"
             circular:layout_constraintEnd_toEndOf="parent"
-            circular:layout_constraintHorizontal_bias="0.116"
             circular:layout_constraintStart_toStartOf="parent"
-            circular:layout_constraintTop_toTopOf="parent"
-            circular:layout_constraintVertical_bias="0.0" />
+            circular:layout_constraintTop_toBottomOf="@+id/init_msg" />
 
         <TextView
             android:id="@+id/init_msg"
-            android:layout_width="571dp"
-            android:layout_height="52dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="8dp"
-            android:text='"Favor poner el celular en la frente"'
+            android:layout_width="510dp"
+            android:layout_height="56dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="8dp"
+            android:text='"Colocar Celular en la Frente"'
             android:textAlignment="center"
             android:textColor="@color/colorAccent"
-            android:textSize="36sp"
+            android:textSize="33sp"
             android:textStyle="bold"
+            app:layout_constraintHorizontal_bias="0.5"
+            circular:layout_constraintEnd_toEndOf="parent"
             circular:layout_constraintStart_toStartOf="parent"
-            circular:layout_constraintTop_toBottomOf="@+id/circularprogressbar" />
+            circular:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/correctimg"
+            android:layout_width="593dp"
+            android:layout_height="265dp"
+            android:layout_marginBottom="8dp"
+            android:src="@drawable/correct"
+            android:visibility="gone"
+            app:layout_constraintVertical_bias="0.421"
+            circular:layout_constraintBottom_toBottomOf="parent"
+            circular:layout_constraintEnd_toEndOf="parent"
+            circular:layout_constraintHorizontal_bias="1.0"
+            circular:layout_constraintStart_toStartOf="parent"
+            circular:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/passimg"
+            android:layout_width="558dp"
+            android:layout_height="237dp"
+            android:layout_marginTop="36dp"
+            android:src="@drawable/passed"
+            android:visibility="gone"
+            circular:layout_constraintEnd_toEndOf="parent"
+            circular:layout_constraintTop_toTopOf="parent" />
+
+        <android.support.constraint.Guideline
+            android:id="@+id/guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="20dp" />
 
     </android.support.constraint.ConstraintLayout>
 

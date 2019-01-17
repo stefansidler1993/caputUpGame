@@ -1,13 +1,22 @@
 package com.electronic.lapsus.caputup;
 
 import android.content.Intent;
-import android.media.Image;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.ImageView;
+import android.widget.AdapterView;
+import android.widget.ListView;
 import android.widget.Toast;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
 
 public class HomeActivity extends AppCompatActivity {
 
@@ -18,90 +27,64 @@ public class HomeActivity extends AppCompatActivity {
     final int SONGS_CATEGORY = 5;
     final int MOVIES_CATEGORY = 6;
 
+    static List<Category> categoryList = new ArrayList<>();
+    ListView listView;
+    CustomListAdapter customListAdapter = null;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-        ImageView img_politic = null;
-        ImageView img_riddle = null;
-        ImageView img_superstars = null;
-        ImageView img_animals = null;
-        ImageView img_songs = null;
-        ImageView img_movies = null;
+        customListAdapter = new CustomListAdapter(this, categoryList);
+        listView = (ListView) findViewById(R.id.categoriesList);
 
-        img_politic = findViewById(R.id.tb_politics_category);
-        img_riddle = findViewById(R.id.tb_riddles_category);
-        img_superstars = findViewById(R.id.tb_superstars_category);
-        img_animals = findViewById(R.id.tb_animals_category);
-        img_songs = findViewById(R.id.tb_songs_category);
-        img_movies = findViewById(R.id.tb_movies_category);
+        listView.setAdapter(customListAdapter);
 
-        img_politic.setOnClickListener(new View.OnClickListener() {
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
             @Override
-            public void onClick(View v) {
-                Toast.makeText(getApplicationContext(), "Política", Toast.LENGTH_LONG).show();
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+                Category category_selected = categoryList.get(position);
+
+                Toast.makeText(getApplicationContext(), category_selected.getTitle() , Toast.LENGTH_LONG).show();
 
                 Intent intent = new Intent(HomeActivity.this, DetailsActivity.class);
-                intent.putExtra("category", "politic");
-                startActivityForResult(intent, POLITIC_CATEGORY);
+                intent.putExtra("category", category_selected);
+                startActivityForResult(intent, category_selected.getId());
+            }
+        });
+
+    }
+
+    public List<Category> getCategories(){
+
+        Retrofit retrofit = new Retrofit.Builder().baseUrl("https://api.myjson.com")
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+
+        CategoriesService categoriesService = retrofit.create(CategoriesService.class);
+        Call<List<Category>> call = categoriesService.getCategories();
+
+        call.enqueue(new Callback<List<Category>>() {
+            @Override
+            public void onResponse(Call<List<Category>> call, Response<List<Category>> response) {
+                for(Category category : response.body()){
+                    categoryList.add(
+                            new Category(category.getId(), category.getTitle(), category.getWords(), category.getImageUrl()));
+                }
+             //   customListAdapter.notifyDataSetChanged();
+
+            }
+
+            @Override
+            public void onFailure(Call<List<Category>> call, Throwable t) {
 
             }
         });
 
-        img_riddle.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(getApplicationContext(), "Adivinanzas", Toast.LENGTH_LONG).show();
-
-                Intent intent = new Intent(HomeActivity.this, DetailsActivity.class);
-                intent.putExtra("category", "riddles");
-                startActivityForResult(intent, RIDDLES_CATEGORY);}
-        });
-
-        img_superstars.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(getApplicationContext(), "Famosos", Toast.LENGTH_LONG).show();
-
-                Intent intent = new Intent(HomeActivity.this, DetailsActivity.class);
-                intent.putExtra("category", "superstars");
-                startActivityForResult(intent, SUPERSTARS_CATEGORY);
-            }
-        });
-
-        img_animals.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(getApplicationContext(), "Animales", Toast.LENGTH_LONG).show();
-
-                Intent intent = new Intent(HomeActivity.this, DetailsActivity.class);
-                intent.putExtra("category", "animals");
-                startActivityForResult(intent, ANIMALS_CATEGORY);
-            }
-        });
-
-        img_songs.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(getApplicationContext(), "Canciones", Toast.LENGTH_LONG).show();
-
-                Intent intent = new Intent(HomeActivity.this, DetailsActivity.class);
-                intent.putExtra("category", "songs");
-                startActivityForResult(intent, SONGS_CATEGORY);
-            }
-        });
-
-        img_movies.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(getApplicationContext(), "Peliculas", Toast.LENGTH_LONG).show();
-
-                Intent intent = new Intent(HomeActivity.this, DetailsActivity.class);
-                intent.putExtra("category", "movies");
-                startActivityForResult(intent, MOVIES_CATEGORY);
-           }
-        });
+        return categoryList;
 
     }
 
@@ -111,30 +94,8 @@ public class HomeActivity extends AppCompatActivity {
 
         String category = data.getStringExtra("category");
 
-        if(requestCode == POLITIC_CATEGORY){
-            if(resultCode == RESULT_OK){
+        if(resultCode == RESULT_OK){
 
-            }
-        } else if(requestCode == RIDDLES_CATEGORY){
-            if(resultCode == RESULT_OK){
-
-            }
-        } else if(requestCode == SUPERSTARS_CATEGORY){
-            if(resultCode == RESULT_OK){
-
-            }
-        } else if(requestCode == ANIMALS_CATEGORY){
-            if(resultCode == RESULT_OK){
-
-            }
-        } else if(requestCode == SONGS_CATEGORY){
-            if(resultCode == RESULT_OK){
-
-            }
-        } else if(requestCode == MOVIES_CATEGORY){
-            if(resultCode == RESULT_OK){
-
-            }
         }
 
     }

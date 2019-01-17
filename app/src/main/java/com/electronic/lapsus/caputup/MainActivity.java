@@ -6,7 +6,7 @@ import android.view.WindowManager;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity{
 
     ProgressBar progressBar;
     TextView textView;
@@ -25,7 +25,14 @@ public class MainActivity extends AppCompatActivity {
         progressBar.setMax(100);
         progressBar.setScaleY(3f);
 
-        progressAnimation();
+        this.runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                HomeActivity ha = new HomeActivity();
+                ha.getCategories();
+                progressAnimation();
+            }
+        });
 
     }
 
@@ -34,4 +41,5 @@ public class MainActivity extends AppCompatActivity {
         animation.setDuration(5000);
         progressBar.setAnimation(animation);
     }
+
 }
