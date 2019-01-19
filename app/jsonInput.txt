@@ -1,8 +1,8 @@
 [
   {
     "id": 1,
-    "title": "objectos",
-    "body": [
+    "title": "objetos",
+    "words": [
       "Bate",
       "Pistola",
       "Reloj",
@@ -14,19 +14,19 @@
       "Carro",
       "Bombillo"
     ],
-    "imageUrl": "http://nuestropequenomundo.edu.do/caputup/imagenes/adivinanza.png"
+    "imageUrl": "http://nuestropequenomundo.edu.do/caputup/imagenes/objetos.png"
   },
   {
     "id": 2,
     "title": "animales",
-    "body": [
+    "words": [
       "Mi esposa",
-      "LeÛn",
+      "Le√≥n",
       "Mono",
       "Koala",
       "Caballo",
       "Lobo",
-      "HurÛn",
+      "Hur√≥n",
       "Tigre",
       "Zebra",
       "Gallo"
@@ -36,15 +36,15 @@
   {
     "id": 3,
     "title": "paises",
-    "body": [
+    "words": [
       "Suiza",
-      "Rep˙blica Dominicana",
-      "EspaÒa",
+      "Rep√∫blica Dominicana",
+      "Espa√±a",
       "Colombia",
       "Argentina",
       "EE.UU",
       "Francia",
-      "Canad·",
+      "Canad√°",
       "China",
       "Brazil"
     ],
@@ -53,7 +53,7 @@
   {
     "id": 4,
     "title": "deportes",
-    "body": [
+    "words": [
       "Baloncesto",
       "Tennis",
       "VolleyBall",
@@ -70,7 +70,7 @@
   {
     "id": 5,
     "title": "comidas",
-    "body": [
+    "words": [
       "Espaguettis",
       "Pizza",
       "Pescado",
@@ -87,16 +87,16 @@
   {
     "id": 6,
     "title": "musicas",
-    "body": [
+    "words": [
       "No me acuerdo - Thalia",
       "Sin pijama - Natti Natasha",
-      "El perdÛn - Nicky Jam",
+      "El perd√≥n - Nicky Jam",
       "Mayores - Becky G",
       "Escapate conmigo - Wisin",
       "La gasolina - Daddy Yankee",
-      "Te soÒe - Ala jaza",
+      "Te so√±e - Ala jaza",
       "Centavito - Romeo Santos",
-      "SobrevivirÈ - Rubby Perez",
+      "Sobrevivir√© - Rubby Perez",
       "Chambonea - Omega El fuerte"
     ],
     "imageUrl": "http://nuestropequenomundo.edu.do/caputup/imagenes/musicas.png"
@@ -104,11 +104,11 @@
   {
     "id": 7,
     "title": "peliculas",
-    "body": [
+    "words": [
       "Triple XXX",
       "Avengers",
       "Deadpool",
-      "MisiÛn Imposible",
+      "Misi√≥n Imposible",
       "Spider Man",
       "Jumanji",
       "Aqua Man",
@@ -121,15 +121,15 @@
   {
     "id": 8,
     "title": "politicas",
-    "body": [
+    "words": [
       "Rafael Leonidas Trujillo",
       "Barack Obama",
-      "HipÛlito MejÌa",
+      "Hip√≥lito Mej√≠a",
       "Donald Trump",
       "Alain Berset",
-      "Leonel Fern·ndez",
-      "Enrique PeÒa Nieto",
-      "Nicol·s Maduro",
+      "Leonel Fern√°ndez",
+      "Enrique Pe√±a Nieto",
+      "Nicol√°s Maduro",
       "George W. Bush",
       "Hu Jintao"
     ],
@@ -138,7 +138,7 @@
   {
     "id": 9,
     "title": "cantantes",
-    "body": [
+    "words": [
       "Shakira",
       "Michael Jackson",
       "Enrique Iglesias",
@@ -155,7 +155,7 @@
   {
     "id": 10,
     "title": "famosos",
-    "body": [
+    "words": [
       "Cristiano Ronaldo",
       "Sylvester Stallone",
       "Tom Hanks",
