@@ -7,7 +7,7 @@ import retrofit2.http.GET;
 
 public interface CategoriesService {
 
-    String API_ROUTE = "/bins/m8xrc";
+    String API_ROUTE = "/bins/lpv14";
 
     @GET(API_ROUTE)
     Call<List<Category>> getCategories();
